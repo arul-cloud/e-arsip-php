@@ -1,0 +1,20 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+RewriteRule ^user/?([A-Za-z0-9\-]+)/([A-Za-z0-9\-]+)/?$ userlayout.php?name=dev&i=$2 [L]
+RewriteRule ^ref/?([A-Za-z0-9\-]+)/([A-Za-z0-9\-]+)/?$ referensi.php?name=dev&function=$2 [L]
+RewriteRule ^ref/?([A-Za-z0-9\-]+)/([A-Za-z0-9\-]+)/([A-Za-z0-9\-]+)/?$ referensi.php?name=dev&function=$2&id=$3 [L]
+RewriteRule ^/?([A-Za-z0-9\-]+)/([A-Za-z0-9\-]+)/?$ home.php?name=dev&i=$2 [L]
+RewriteRule ^/?([A-Za-z0-9\-]+)/([A-Za-z0-9\-]+)/([A-Za-z0-9\-]+)/?$ home.php?name=dev&i=$2&id=$3 [L]
+RewriteRule ^referensi/?([A-Za-z0-9\-]+)/([A-Za-z0-9\-]+)/([A-Za-z0-9\-]+)/?$ home.php?name=dev&i=$2&id=$3 [L]
+
+</IfModule>
+
+SetEnv StaticPath C:/xampp/htdocs/siarsip/
+
+SetEnv GlobalPath http://localhost/siarsip/
+
+
+
+ErrorDocument 404 http://localhost/siarsip/error.php
+
